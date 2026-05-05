@@ -81,7 +81,7 @@ maximum drawdown, and CVaR-95. Five repeats for error bars.
 
 ## Headline result
 
-![Saturation curve — BTC](figures/fig_saturation_cvar.png)
+![Cross-asset saturation curves (10 deep-WFO crypto assets)](figures/fig_cross_asset_saturation.png)
 
 Cross-asset saturation curves on the **10 deepest-WFO crypto assets**
 (ETH, BTC, LTC, TRX, XRP, LINK, ZEC, DOGE, BCH, AVAX). For each asset
