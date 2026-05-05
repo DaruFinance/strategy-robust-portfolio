@@ -1,0 +1,94 @@
+{
+  "mode": "data",
+  "rho": 0.001,
+  "asset": "DOGE_30m_21W",
+  "n_strategies_universe": 31919,
+  "n_train_bars": 1532,
+  "n_test_bars": 657,
+  "mean_curve": [
+    {
+      "n_universe": 25,
+      "method": "lw",
+      "vol_oos": 87.49883576904308,
+      "max_dd_oos": -282.53077877374477,
+      "cvar95_oos": -10.73154896462707
+    },
+    {
+      "n_universe": 25,
+      "method": "robust",
+      "vol_oos": 87.49885957913031,
+      "max_dd_oos": -282.5310711544927,
+      "cvar95_oos": -10.73155058874256
+    },
+    {
+      "n_universe": 25,
+      "method": "sample",
+      "vol_oos": 86.55887474758545,
+      "max_dd_oos": -270.0591497922923,
+      "cvar95_oos": -10.682219529034302
+    },
+    {
+      "n_universe": 100,
+      "method": "lw",
+      "vol_oos": 55.838164606139024,
+      "max_dd_oos": -220.99290709568237,
+      "cvar95_oos": -6.948234730990521
+    },
+    {
+      "n_universe": 100,
+      "method": "robust",
+      "vol_oos": 55.8381845869417,
+      "max_dd_oos": -220.99317860745276,
+      "cvar95_oos": -6.948236639724486
+    },
+    {
+      "n_universe": 100,
+      "method": "sample",
+      "vol_oos": 53.81844686184813,
+      "max_dd_oos": -193.2830966633471,
+      "cvar95_oos": -6.847134515648823
+    },
+    {
+      "n_universe": 500,
+      "method": "lw",
+      "vol_oos": 34.69474369954954,
+      "max_dd_oos": -155.35154350837328,
+      "cvar95_oos": -4.313944745425596
+    },
+    {
+      "n_universe": 500,
+      "method": "robust",
+      "vol_oos": 34.69475941719538,
+      "max_dd_oos": -155.3517380942772,
+      "cvar95_oos": -4.313946867446101
+    },
+    {
+      "n_universe": 500,
+      "method": "sample",
+      "vol_oos": 32.95171364604197,
+      "max_dd_oos": -109.90359677268484,
+      "cvar95_oos": -4.002865904839259
+    },
+    {
+      "n_universe": 2000,
+      "method": "lw",
+      "vol_oos": 25.719177702732814,
+      "max_dd_oos": -112.42452808233595,
+      "cvar95_oos": -3.194906096306306
+    },
+    {
+      "n_universe": 2000,
+      "method": "robust",
+      "vol_oos": 25.719184550824128,
+      "max_dd_oos": -112.42465432400179,
+      "cvar95_oos": -3.194907231687408
+    },
+    {
+      "n_universe": 2000,
+      "method": "sample",
+      "vol_oos": 24.447935105349462,
+      "max_dd_oos": -79.76504389116313,
+      "cvar95_oos": -2.9913180831127044
+    }
+  ]
+}
