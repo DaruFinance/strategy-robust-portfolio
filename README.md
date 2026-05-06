@@ -3,7 +3,7 @@
 **Robust portfolio construction over a strategy universe.**
 
 > Companion repository to the M-series of reference implementations on
-> [daniel-v-gatto.com](https://daniel-v-gatto.com). Inputs come from the
+> [daru.finance](https://daru.finance). Inputs come from the
 > per-strategy daily-PnL Parquet substrate produced by
 > [`strategy-pnl-daily-rs`](https://github.com/DaruFinance/strategy-pnl-daily-rs)
 > over the
