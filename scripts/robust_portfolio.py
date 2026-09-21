@@ -14,15 +14,16 @@ selected portfolio. The elbow is the n at which adding more strategies
 stops reducing tail risk.
 
 Usage:
-    python scripts/robust_portfolio.py                 # synthetic demo
-    python scripts/robust_portfolio.py --from-data \\
-        --returns-parquet /mnt/d/strategies_parquet/pnl_daily \\
+    python scripts/robust_portfolio.py --synthetic     # synthetic demo
+    python scripts/robust_portfolio.py \\
+        --returns-parquet /path/to/pnl_daily \\
         --asset BTC_30m_27W
 """
 from __future__ import annotations
 
 import argparse
 import json
+import os
 import time
 from pathlib import Path
 
@@ -259,8 +260,9 @@ def split_train_test(R: np.ndarray, train_frac: float = 0.7) -> tuple[np.ndarray
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--returns-parquet",
-                    default="/mnt/d/strategies_parquet/pnl_daily",
-                    help="path to the pnl_daily/ Parquet substrate")
+                    default=os.environ.get("STRATEGY_PNL_DAILY_ROOT"),
+                    help="path to the pnl_daily/ Parquet substrate "
+                         "(or set STRATEGY_PNL_DAILY_ROOT)")
     ap.add_argument("--asset", default=None)
     ap.add_argument("--rho", type=float, default=0.0001,
                     help="Frobenius-norm uncertainty radius for robust min-var")
@@ -270,6 +272,9 @@ def main():
                     help="(rare) factor-model synthetic returns; only for "
                          "testing the analysis machinery.")
     args = ap.parse_args()
+    if not args.synthetic and not args.returns_parquet:
+        ap.error("pass --returns-parquet or set STRATEGY_PNL_DAILY_ROOT "
+                 "(or use --synthetic)")
 
     summary: dict = {"mode": "synthetic" if args.synthetic else "data",
                      "rho": args.rho}

@@ -2,8 +2,9 @@
 
 **Robust portfolio construction over a strategy universe.**
 
-> Companion repository to the M-series of reference implementations on
-> [daru.finance](https://daru.finance). Inputs come from the
+> The code for [Universe-saturation of minimum-variance portfolios](https://daru.finance/projects/strategy-robust-portfolio),
+> one of the M-series models Daniel Gatto publishes on [daru.finance](https://daru.finance).
+> Inputs come from the
 > per-strategy daily-PnL Parquet substrate produced by
 > [`strategy-pnl-daily-rs`](https://github.com/DaruFinance/strategy-pnl-daily-rs)
 > over the
@@ -34,13 +35,13 @@ universe and asks two questions:
 git clone https://github.com/DaruFinance/strategy-robust-portfolio
 cd strategy-robust-portfolio
 pip install -e .
-python scripts/robust_portfolio.py             # default: real corpus
+python scripts/robust_portfolio.py --returns-parquet /path/to/pnl_daily
 ```
 
-The default reads the `pnl_daily/` Parquet substrate at
-`/mnt/d/strategies_parquet/pnl_daily` (produced by
-`strategies_etl/pnl_daily_etl.py`), pivots it to a (T × N) returns matrix,
-and writes `figures/fig_saturation_cvar.png`,
+Point `--returns-parquet` (or the `STRATEGY_PNL_DAILY_ROOT` environment
+variable) at the `pnl_daily/` Parquet substrate built by
+[`strategy-pnl-daily-rs`](https://github.com/DaruFinance/strategy-pnl-daily-rs).
+The script pivots it to a (T × N) returns matrix and writes `figures/fig_saturation_cvar.png`,
 `figures/fig_saturation_vol.png`,
 `figures/fig_method_comparison.png`, plus `portfolio.json`.
 
